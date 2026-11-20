@@ -15,6 +15,7 @@
       <nav class="nav-links">
         <button class="nav-link active" data-view="home"><span>⌂</span> Home</button>
         <button class="nav-link" data-view="library"><span>▤</span> Song library</button>
+        <button class="nav-link" data-view="challenge"><span>✎</span> Lyrics challenge</button>
         <button class="nav-link" data-view="flashcards"><span>▣</span> Flashcards <span class="nav-count" id="flashNavCount">0</span></button>
       </nav>
       <div class="nav-label playlist-label">YOUR LEARNING</div>
@@ -46,6 +47,24 @@
 
       <section class="view" id="libraryView">
         <div class="page-heading"><p class="eyebrow">THE PLAYLIST IS YOUR CLASSROOM</p><h1>Song library</h1><p>Find a song. Discover how English really works.</p></div>
+        <div class="custom-song-panel">
+          <button class="custom-song-toggle" id="toggleSongForm">＋ Add your own song</button>
+          <div class="custom-song-form hidden" id="customSongForm">
+            <p class="eyebrow">YOUR MUSIC, YOUR STUDY</p><h2>Create a song lesson</h2>
+            <p class="form-help">Paste lyric lines in pairs using <code>English | Spanish</code>, one line per pair. Only add lyrics you have permission to use.</p>
+            <div class="song-form-grid">
+              <label>Song title<input id="customTitle" required placeholder="Song title"></label>
+              <label>Artist<input id="customArtist" required placeholder="Artist name"></label>
+              <label>English level<select id="customLevel"><option>B1</option><option>B2</option><option>C1</option></select></label>
+              <label>Topic<select id="customTopic"><option>Idioms</option><option>Phrasal verbs</option><option>Slang</option><option>Grammar</option><option>Vocabulary</option></select></label>
+              <label class="form-full">YouTube link<input id="customYoutube" placeholder="https://youtube.com/watch?v=... (optional)"></label>
+              <label class="form-full">Lyrics (English | Spanish)<textarea id="customLyrics" rows="7" placeholder="I miss the summer days | Extraño los días de verano
+I wish we could go back | Ojalá pudiéramos volver"></textarea></label>
+              <label class="form-full">Expressions (one per line: phrase | literal | meaning | pronunciation | register | example)<textarea id="customExpressions" rows="4" placeholder="go back | volver atrás | regresar a un momento anterior | /ɡoʊ bæk/ | Phrasal verb | I want to go back to the beginning"></textarea></label>
+            </div>
+            <div class="song-form-actions"><button class="secondary-button" id="cancelSongForm">Cancel</button><button class="primary-button" id="saveCustomSong">Save song</button></div>
+          </div>
+        </div>
         <div class="filters"><div class="search-wrap"><span>⌕</span><input type="search" id="searchInput" placeholder="Search songs, artists, expressions..."></div><select id="levelFilter"><option value="all">All levels</option><option value="B1">B1 · Intermediate</option><option value="B2">B2 · Upper-intermediate</option><option value="C1">C1 · Advanced</option></select><select id="topicFilter"><option value="all">All topics</option><option value="Idioms">Idioms</option><option value="Phrasal verbs">Phrasal verbs</option><option value="Slang">Slang</option><option value="Grammar">Grammar</option></select></div>
         <div class="library-grid" id="libraryGrid"></div>
       </section>
@@ -61,6 +80,17 @@
             <div class="challenge-card"><div class="challenge-head"><div><p class="eyebrow">ACTIVE LISTENING</p><h2>Listening challenge</h2><p>Fill in the missing words as you listen.</p></div><label class="switch"><input type="checkbox" id="challengeToggle"><span class="slider"></span></label></div><div id="challengeArea" class="challenge-area hidden"></div></div>
           </div>
           <aside class="lesson-side"><div class="side-card expression-card"><div class="side-card-head"><div><p class="eyebrow">VOCABULARY</p><h3>Expressions to know</h3></div><span class="side-count" id="expressionCount">0</span></div><div id="expressionList"></div></div><div class="side-card"><p class="eyebrow">AFTER THE SONG</p><h3>Make it stick</h3><p class="side-description">Save new expressions to your flashcards and come back to them later.</p><button class="primary-button full" id="addLessonCards">Add expressions to deck</button><button class="secondary-button full" id="openFlashcards">Go to flashcards →</button></div></aside>
+        </div>
+      </section>
+
+
+      <section class="view" id="challengeView">
+        <div class="page-heading"><p class="eyebrow">LISTEN · REMEMBER · COMPLETE</p><h1>Lyrics challenge</h1><p>Complete the missing words in original practice lines or your own song lessons.</p></div>
+        <div class="standalone-challenge card">
+          <div class="challenge-settings"><label>Choose a song<select id="quizSongSelect"></select></label><label>Difficulty<select id="quizDifficulty"><option value="easy">Easy · 1 missing word</option><option value="medium">Medium · 2 missing words</option><option value="hard">Hard · 3 missing words</option></select></label></div>
+          <div class="quiz-prompt"><span class="quiz-label">YOUR LISTENING TASK</span><p id="quizLine">Choose a song and press New challenge.</p><div class="quiz-translation" id="quizTranslation"></div></div>
+          <div class="quiz-inputs" id="quizInputs"></div><div class="challenge-actions"><button class="primary-button" id="quizCheck">Check answers</button><button class="secondary-button" id="quizHint">Hint</button><button class="secondary-button" id="quizNext">New challenge</button></div><p class="challenge-feedback" id="quizFeedback"></p>
+          <div class="quiz-score-row"><div><span class="quiz-label">YOUR SCORE</span><strong id="quizScore">0</strong></div><div><span class="quiz-label">CORRECT ANSWERS</span><strong id="quizCorrect">0</strong></div><div><span class="quiz-label">ATTEMPTS</span><strong id="quizAttempts">0</strong></div></div>
         </div>
       </section>
 
