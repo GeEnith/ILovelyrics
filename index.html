@@ -98,7 +98,16 @@ I wish we could go back | Ojalá pudiéramos volver"></textarea></label>
             <label class="form-full">YouTube URL<input id="creatorYoutube" placeholder="https://www.youtube.com/watch?v=... (optional)"></label>
             <label class="form-full">Lyrics — English | Spanish<textarea id="creatorLyrics" rows="8" placeholder="One bilingual line per row"></textarea></label>
             <label class="form-full">Expressions — phrase | literal | meaning | pronunciation | register | example<textarea id="creatorExpressions" rows="5" placeholder="One expression per row"></textarea></label>
-          </div><div class="song-form-actions"><button class="secondary-button" id="creatorExportDrafts">Export drafts</button><button class="primary-button" id="creatorPublish">Publish to my catalog</button></div>
+          </div>
+          <div class="activity-builder"><p class="eyebrow">ACTIVITY BUILDER</p><h3>Activities for this song</h3><p class="form-help">All activities are available. Choose which ones you want to prepare and paste their exercises in the corresponding box.</p>
+            <div class="activity-config"><label class="activity-toggle"><input type="checkbox" id="actLyrics" checked> <strong>Lyrics Challenge</strong></label><textarea id="cfgLyrics" rows="3" placeholder='Example JSON: [{"line":0,"answer":"...","hint":"..."}]'></textarea></div>
+            <div class="activity-config"><label class="activity-toggle"><input type="checkbox" id="actMusicPause"> <strong>Music Pause</strong></label><textarea id="cfgMusicPause" rows="4" placeholder='[{"time":25,"line":"I want to ____","target":"...","choices":["...","...","...","..."],"meaning":"..."}]'></textarea></div>
+            <div class="activity-config"><label class="activity-toggle"><input type="checkbox" id="actListening"> <strong>Listening Challenge</strong></label><textarea id="cfgListening" rows="3" placeholder='[{"line":0,"missing":["word"],"hint":"..."}]'></textarea></div>
+            <div class="activity-config"><label class="activity-toggle"><input type="checkbox" id="actFlashcards"> <strong>Flashcards</strong></label><textarea id="cfgFlashcards" rows="3" placeholder='[{"front":"...","back":"...","pronunciation":"..."}]'></textarea></div>
+            <div class="activity-config"><label class="activity-toggle"><input type="checkbox" id="actVocabulary"> <strong>Vocabulary Practice</strong></label><textarea id="cfgVocabulary" rows="3" placeholder='[{"word":"...","meaning":"...","example":"..."}]'></textarea></div>
+            <div class="activity-config"><label class="activity-toggle"><input type="checkbox" id="actTranslation"> <strong>Translation Practice</strong></label><textarea id="cfgTranslation" rows="3" placeholder='[{"line":0,"translation":"..."}]'></textarea></div>
+          </div>
+          <div class="song-form-actions"><button class="secondary-button" id="creatorExportDrafts">Export drafts</button><button class="primary-button" id="creatorPublish">Save song + activities</button></div>
         </div>
         <div class="creator-list-card"><div class="section-heading"><div><p class="eyebrow">CATALOG</p><h2>My published songs</h2></div><button class="primary-button" id="creatorExportCatalog">Export shared catalog JSON</button></div><div id="creatorSongList" class="creator-song-list"></div></div>
       </section>
