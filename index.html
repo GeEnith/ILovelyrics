@@ -16,6 +16,7 @@
         <button class="nav-link active" data-view="home"><span>⌂</span> Home</button>
         <button class="nav-link" data-view="library"><span>▤</span> Song library</button>
         <button class="nav-link" data-view="challenge"><span>✎</span> Lyrics challenge</button>
+        <button class="nav-link" data-view="musicpause"><span>♫</span> Music Pause</button>
         <button class="nav-link" data-view="flashcards"><span>▣</span> Flashcards <span class="nav-count" id="flashNavCount">0</span></button>
         <button class="nav-link" data-view="creator"><span>✦</span> Creator Studio</button>
       </nav>
@@ -42,7 +43,7 @@
         <div class="section-heading"><div><p class="eyebrow">PICK UP WHERE YOU LEFT OFF</p><h2>Made for your ears</h2></div><button class="text-button" data-go="library">Explore library ↗</button></div>
         <div class="featured-grid" id="featuredSongs"></div>
         <div class="section-heading compact"><div><p class="eyebrow">YOUR STUDY TOOLS</p><h2>Build your English</h2></div></div>
-        <div class="tool-grid"><button class="tool-card" data-go="library"><span class="tool-emoji">🎧</span><strong>Listening practice</strong><span>Train your ear with music</span><span class="tool-arrow">↗</span></button><button class="tool-card" data-go="flashcards"><span class="tool-emoji">🗂️</span><strong>Expression flashcards</strong><span>Review what you've learned</span><span class="tool-arrow">↗</span></button></div>
+        <div class="tool-grid"><button class="tool-card" data-go="library"><span class="tool-emoji">🎧</span><strong>Listening practice</strong><span>Train your ear with music</span><span class="tool-arrow">↗</span></button><button class="tool-card" data-go="musicpause"><span class="tool-emoji">♫</span><strong>Music Pause</strong><span>Listen, pause and choose the missing word</span><span class="tool-arrow">↗</span></button><button class="tool-card" data-go="flashcards"><span class="tool-emoji">🗂️</span><strong>Expression flashcards</strong><span>Review what you've learned</span><span class="tool-arrow">↗</span></button></div>
       </section>
 
 
@@ -110,6 +111,16 @@ I wish we could go back | Ojalá pudiéramos volver"></textarea></label>
           <div class="quiz-inputs" id="quizInputs"></div><div class="challenge-actions"><button class="primary-button" id="quizCheck">Check answers</button><button class="secondary-button" id="quizHint">Hint</button><button class="secondary-button" id="quizNext">New challenge</button></div><p class="challenge-feedback" id="quizFeedback"></p>
           <div class="quiz-score-row"><div><span class="quiz-label">YOUR SCORE</span><strong id="quizScore">0</strong></div><div><span class="quiz-label">CORRECT ANSWERS</span><strong id="quizCorrect">0</strong></div><div><span class="quiz-label">ATTEMPTS</span><strong id="quizAttempts">0</strong></div></div>
         </div>
+      </section>
+
+
+      <section class="view" id="musicpauseView">
+        <div class="page-heading"><p class="eyebrow">LISTEN · PAUSE · THINK</p><h1>Music Pause <span class="brand-dot">♫</span></h1><p>Enjoy the music, then choose the word you heard.</p></div>
+        <div class="musicpause-layout">
+          <div class="musicpause-player card"><div class="musicpause-video"><div id="mpPlayer"></div><div class="mp-fallback" id="mpFallback"><span>♫</span><p>Choose a video and press Start.</p></div></div><div class="mp-song-picker"><label>Choose a video<select id="mpSongSelect"></select></label><button class="primary-button" id="mpStart">▶ Start Music Pause</button></div></div>
+          <div class="musicpause-question card" id="mpQuestionCard"><div class="mp-topline"><span class="quiz-label">LISTENING ROUND</span><span id="mpRound">Ready · 0/4</span></div><div class="mp-progress"><div id="mpProgressFill"></div></div><div id="mpQuestion"><div class="mp-illustration">🎧 ✨</div><h2>Ready to listen?</h2><p>Start the video. When it pauses, choose the missing word from four options.</p></div><div class="mp-options" id="mpOptions"></div><div class="mp-feedback" id="mpFeedback"></div><div class="mp-actions"><button class="secondary-button" id="mpReplay" disabled>↻ Replay segment</button><button class="primary-button" id="mpContinue" disabled>Continue ▶</button></div><div class="mp-scoreline"><span>Score <strong id="mpScore">0</strong></span><span>Correct <strong id="mpCorrect">0</strong></span><span>Streak <strong id="mpStreak">0</strong> ✦</span></div></div>
+        </div>
+        <p class="mp-note">Demo mode: the practice sentences are original samples. The pause points are approximate, so they can be adjusted when a song lesson is configured.</p>
       </section>
 
 
