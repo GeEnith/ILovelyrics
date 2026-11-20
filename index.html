@@ -87,7 +87,7 @@ I wish we could go back | Ojalá pudiéramos volver"></textarea></label>
 
 
       <section class="view" id="creatorView">
-        <div class="page-heading"><p class="eyebrow">CONTENT MANAGEMENT</p><h1>Creator Studio</h1><p>Create lessons once and make them available to every Lyrix challenge.</p></div>
+        <div class="page-heading creator-heading"><div><p class="eyebrow">CONTENT MANAGEMENT</p><h1>Creator Studio</h1><p>Create lessons once and make them available to every Lyrix challenge.</p></div><button class="secondary-button" id="lockCreatorStudio" type="button">🔒 Lock Studio</button></div>
         <div class="creator-notice"><strong>How shared publishing works</strong><p>Drafts are saved on this browser. To share a song with everyone on GitHub Pages, export the published catalog and replace <code>content/songs.json</code> in your repository with that file.</p></div>
         <div class="creator-stats" id="creatorStats"></div>
         <div class="custom-song-form creator-form">
@@ -127,6 +127,20 @@ I wish we could go back | Ojalá pudiéramos volver"></textarea></label>
       <section class="view" id="flashcardsView"><div class="page-heading"><p class="eyebrow">YOUR PERSONAL VOCABULARY</p><h1>Flashcards</h1><p>Review, remember, and make new expressions part of your English.</p></div><div class="flashcard-toolbar"><div class="deck-tabs"><button class="selected" data-deck="all">All cards</button><button data-deck="review">Review later</button><button data-deck="mastered">Mastered</button></div><button id="exportCards" class="secondary-button">↧ Export deck</button></div><div class="flashcard-stage"><button class="round-nav" id="prevCard" aria-label="Previous card">←</button><div class="flashcard" id="flashcard"><div class="card-top"><span id="cardCategory">EXPRESSION</span><span id="cardPosition">0 / 0</span></div><div class="card-face" id="cardFace"><div class="card-word" id="cardWord">Your deck is empty</div><p class="card-hint" id="cardHint">Add expressions from a lesson.</p></div><div class="card-bottom"><button class="flip-button" id="flipCard">↻ Flip card</button></div></div><button class="round-nav" id="nextCard" aria-label="Next card">→</button></div><div class="flashcard-actions"><button class="review-button" id="markReview">↺ Review later</button><button class="master-button" id="markMastered">✓ I know this</button></div><div class="deck-empty-note" id="deckStatus"></div></section>
       <footer class="app-footer"><span>ILOVELYRICS <span class="brand-dot">.</span> English through music</span><span>Made for curious minds ♡</span></footer>
     </main>
+  </div>
+  <div class="studio-gate-backdrop hidden" id="studioGate" role="dialog" aria-modal="true" aria-labelledby="studioGateTitle">
+    <form class="studio-gate-card" id="studioGateForm">
+      <button class="studio-gate-close" type="button" id="studioGateClose" aria-label="Close">×</button>
+      <div class="studio-gate-art" aria-hidden="true">♫ ✦</div>
+      <p class="studio-gate-eyebrow">PRIVATE CREATOR SPACE</p>
+      <h2 id="studioGateTitle">Creator Studio</h2>
+      <p class="studio-gate-subtitle">A little space for creators. Enter the shared access password to continue.</p>
+      <label class="studio-gate-label" for="studioGatePassword">Access password</label>
+      <div class="studio-gate-input-wrap"><input id="studioGatePassword" type="password" autocomplete="off" placeholder="Enter password" required><button type="button" id="studioGateToggle" aria-label="Show password">Show</button></div>
+      <p class="studio-gate-error hidden" id="studioGateError" role="alert">That password doesn't match. Try again.</p>
+      <button class="studio-gate-submit" type="submit">Unlock Creator Studio <span>→</span></button>
+      <p class="studio-gate-footer">Private space for our creative team ♡</p>
+    </form>
   </div>
   <div class="expression-modal-backdrop hidden" id="expressionModal"><div class="expression-modal"><button class="modal-close" id="closeModal">×</button><div class="modal-label">EXPRESSION BREAKDOWN</div><h2 id="modalExpression"></h2><div class="modal-pronunciation" id="modalPronunciation"></div><div class="meaning-grid"><div><span>Literal meaning</span><p id="modalLiteral"></p></div><div><span>Real meaning</span><p id="modalMeaning"></p></div></div><div class="modal-register"><span>REGISTER</span><strong id="modalRegister"></strong></div><div class="modal-example"><span>IN CONTEXT</span><p id="modalExample"></p></div><button class="primary-button full" id="saveExpression">＋ Add to flashcards</button></div></div>
   <script src="script.js"></script>
