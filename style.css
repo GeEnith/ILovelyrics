@@ -18,3 +18,40 @@
 .quiz-score-row{border-top:1px solid var(--line);margin-top:22px;padding-top:18px;display:flex;gap:35px}
 .quiz-score-row div{display:grid;gap:6px}.quiz-score-row strong{font:700 22px Manrope}
 @media(max-width:620px){.standalone-challenge{padding:14px}.challenge-settings{grid-template-columns:1fr}.quiz-prompt{padding:15px}.quiz-prompt p{font-size:15px;line-height:2.6}.quiz-blank{width:92px}.quiz-score-row{justify-content:space-between;gap:12px}}
+
+.creator-notice{background:var(--surface2);border:1px solid var(--line);border-left:3px solid var(--accent);padding:15px 17px;border-radius:12px;margin:18px 0;color:var(--muted);font-size:12px;line-height:1.65}.creator-notice strong{color:var(--text)}.creator-notice p{margin:6px 0 0}.creator-stats{display:grid;grid-template-columns:repeat(3,1fr);gap:12px;margin:18px 0}.creator-stat{background:var(--surface);border:1px solid var(--line);border-radius:12px;padding:16px;display:flex;flex-direction:column;gap:5px}.creator-stat strong{font:800 24px Manrope}.creator-stat span{font-size:11px;color:var(--muted)}.creator-form{margin-bottom:24px}.creator-list-card{background:var(--surface);border:1px solid var(--line);border-radius:15px;padding:18px;margin-bottom:20px}.creator-song-list{display:grid;gap:9px}.creator-song-row{display:flex;align-items:center;justify-content:space-between;gap:12px;border:1px solid var(--line);border-radius:10px;padding:12px}.creator-song-row>div{display:flex;flex-direction:column;gap:4px}.creator-song-row strong{font-size:13px}.creator-song-row span{font-size:11px;color:var(--muted)}.creator-delete{font-size:11px;padding:8px 10px}.creator-list-card .section-heading{gap:10px;flex-wrap:wrap}@media(max-width:620px){.creator-stats{grid-template-columns:1fr}.creator-list-card{padding:13px}.creator-song-row{padding:10px}}
+
+/* Ilovelyrics warm, cozy palette */
+body.light{--bg:#fff7f2;--surface:#fffdfb;--surface2:#fff0f4;--text:#493b43;--muted:#887783;--line:#f0dce5;--accent:#d977a6;--accent-dark:#f9e5ef;--shadow:0 14px 36px rgba(140,90,120,.09)}
+body.light .brand-mark{color:#fff;background:linear-gradient(135deg,#e58ab5,#b8a2df)}
+body.light .brand-dot,body.light .welcome-row h1 span{color:#d477a4}
+body.light .stat-icon.green{color:#d477a4}
+body.light .stat-icon.violet{color:#a48acb}
+body.light .stat-icon.orange{color:#dba768}
+body.light .song-art{background:linear-gradient(135deg,#eec7d9,#d9c9ed)}
+body.light .song-art.art-2{background:linear-gradient(140deg,#d8c5ec,#f0d6e6)}
+body.light .song-art.art-3{background:linear-gradient(135deg,#f3d8ae,#f1c9d5)}
+body.light .song-art.art-4{background:linear-gradient(135deg,#c7dce8,#d6c9ec)}
+body.light .song-art.art-5{background:linear-gradient(135deg,#edc4d1,#d5c8ec)}
+body.light .song-art.art-6{background:linear-gradient(135deg,#cde3d0,#f3d7c5)}
+body.light .disc,body.light .disc-front{background:repeating-radial-gradient(circle at center,#e8d6e2 0 3px,#d7c4d2 4px 7px);box-shadow:0 12px 45px rgba(160,110,145,.18)}
+body.light .disc-back{background:repeating-radial-gradient(circle at center,#d6c7e8 0 3px,#c8b8dc 4px 7px)}
+body.light .disc-front:before{background:#e7a6c5}
+body.light .disc-front span{color:#fff}
+body.light .art-orbit{border-color:#d88eb7aa}
+body.light .primary-button,body.light .master-button,body.light .play-mini{background:#d982ac;color:#fff;border-color:#d982ac}
+body.light .nav-link.active{box-shadow:inset 3px 0 #d982ac}
+body.light .tag.level{color:#ad5d87;background:#f8e5ef}
+body.light .creator-notice{border-left-color:#d982ac}
+body.light .eyebrow{color:#bd6c98}
+body.light .challenge-card,body.light .standalone-challenge{background:#fffdfb}
+body.light .quiz-prompt{background:#f8eaf1}
+body.light .quiz-blank{border-color:#e5b7d0}
+body.light .online-dot{background:#d982ac}
+body.light .video-fallback{background:linear-gradient(135deg,#ead9ed,#f1d6e4);color:#66536b}
+body.light .fallback-icon{background:#d982ac;color:#fff}
+body.light .video-fallback span{color:#806e85}
+body.light .theme-toggle{color:#ad5d87}
+body.light .custom-song-toggle{color:#bd6c98}
+body.light .text-button{color:#bd6c98}
+body.light .tool-card:hover,body.light .song-card:hover{border-color:#d982ac}

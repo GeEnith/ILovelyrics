@@ -4,19 +4,20 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <meta name="description" content="Learn real English through music with listening challenges, expressions, and flashcards.">
-  <title>LYRIX — Learn English through music</title>
+  <title>Ilovelyrics — Learn English through music</title>
   <link rel="stylesheet" href="style.css">
 </head>
 <body>
   <div class="app-shell">
     <aside class="sidebar" id="sidebar">
-      <a class="brand" href="#home"><span class="brand-mark">♫</span><span>lyrix<span class="brand-dot">.</span></span></a>
+      <a class="brand" href="#home"><span class="brand-mark">♫</span><span>Ilovelyrics<span class="brand-dot">.</span></span></a>
       <div class="nav-label">STUDY SPACE</div>
       <nav class="nav-links">
         <button class="nav-link active" data-view="home"><span>⌂</span> Home</button>
         <button class="nav-link" data-view="library"><span>▤</span> Song library</button>
         <button class="nav-link" data-view="challenge"><span>✎</span> Lyrics challenge</button>
         <button class="nav-link" data-view="flashcards"><span>▣</span> Flashcards <span class="nav-count" id="flashNavCount">0</span></button>
+        <button class="nav-link" data-view="creator"><span>✦</span> Creator Studio</button>
       </nav>
       <div class="nav-label playlist-label">YOUR LEARNING</div>
       <div class="sidebar-note"><div class="note-icon">✦</div><p>Small steps, real English.</p><span>Keep your listening streak going.</span></div>
@@ -26,7 +27,7 @@
 
     <main class="main-content">
       <header class="topbar">
-        <div class="mobile-brand"><span class="brand-mark">♫</span> lyrix<span class="brand-dot">.</span></div>
+        <div class="mobile-brand"><span class="brand-mark">♫</span> Ilovelyrics<span class="brand-dot">.</span></div>
         <div class="top-progress"><span class="top-progress-label">YOUR PROGRESS</span><div class="mini-track"><div id="topProgressFill"></div></div><span id="topProgressText">0% complete</span></div>
         <button class="theme-toggle" id="themeToggle" title="Toggle theme" aria-label="Toggle theme">☼</button>
       </header>
@@ -84,6 +85,23 @@ I wish we could go back | Ojalá pudiéramos volver"></textarea></label>
       </section>
 
 
+      <section class="view" id="creatorView">
+        <div class="page-heading"><p class="eyebrow">CONTENT MANAGEMENT</p><h1>Creator Studio</h1><p>Create lessons once and make them available to every Lyrix challenge.</p></div>
+        <div class="creator-notice"><strong>How shared publishing works</strong><p>Drafts are saved on this browser. To share a song with everyone on GitHub Pages, export the published catalog and replace <code>content/songs.json</code> in your repository with that file.</p></div>
+        <div class="creator-stats" id="creatorStats"></div>
+        <div class="custom-song-form creator-form">
+          <p class="eyebrow">NEW LESSON</p><h2>Create a song lesson</h2><p class="form-help">Enter lyrics you have permission to use. Each English line should be paired with its Spanish translation using <code>|</code>.</p>
+          <div class="song-form-grid">
+            <label>Song title<input id="creatorTitle" placeholder="Song title"></label><label>Artist<input id="creatorArtist" placeholder="Artist"></label>
+            <label>Level<select id="creatorLevel"><option>B1</option><option>B2</option><option>C1</option></select></label><label>Topic<select id="creatorTopic"><option>Vocabulary</option><option>Idioms</option><option>Phrasal verbs</option><option>Slang</option><option>Grammar</option></select></label>
+            <label class="form-full">YouTube URL<input id="creatorYoutube" placeholder="https://www.youtube.com/watch?v=... (optional)"></label>
+            <label class="form-full">Lyrics — English | Spanish<textarea id="creatorLyrics" rows="8" placeholder="One bilingual line per row"></textarea></label>
+            <label class="form-full">Expressions — phrase | literal | meaning | pronunciation | register | example<textarea id="creatorExpressions" rows="5" placeholder="One expression per row"></textarea></label>
+          </div><div class="song-form-actions"><button class="secondary-button" id="creatorExportDrafts">Export drafts</button><button class="primary-button" id="creatorPublish">Publish to my catalog</button></div>
+        </div>
+        <div class="creator-list-card"><div class="section-heading"><div><p class="eyebrow">CATALOG</p><h2>My published songs</h2></div><button class="primary-button" id="creatorExportCatalog">Export shared catalog JSON</button></div><div id="creatorSongList" class="creator-song-list"></div></div>
+      </section>
+
       <section class="view" id="challengeView">
         <div class="page-heading"><p class="eyebrow">LISTEN · REMEMBER · COMPLETE</p><h1>Lyrics challenge</h1><p>Complete the missing words in original practice lines or your own song lessons.</p></div>
         <div class="standalone-challenge card">
@@ -96,7 +114,7 @@ I wish we could go back | Ojalá pudiéramos volver"></textarea></label>
 
 
       <section class="view" id="flashcardsView"><div class="page-heading"><p class="eyebrow">YOUR PERSONAL VOCABULARY</p><h1>Flashcards</h1><p>Review, remember, and make new expressions part of your English.</p></div><div class="flashcard-toolbar"><div class="deck-tabs"><button class="selected" data-deck="all">All cards</button><button data-deck="review">Review later</button><button data-deck="mastered">Mastered</button></div><button id="exportCards" class="secondary-button">↧ Export deck</button></div><div class="flashcard-stage"><button class="round-nav" id="prevCard" aria-label="Previous card">←</button><div class="flashcard" id="flashcard"><div class="card-top"><span id="cardCategory">EXPRESSION</span><span id="cardPosition">0 / 0</span></div><div class="card-face" id="cardFace"><div class="card-word" id="cardWord">Your deck is empty</div><p class="card-hint" id="cardHint">Add expressions from a lesson.</p></div><div class="card-bottom"><button class="flip-button" id="flipCard">↻ Flip card</button></div></div><button class="round-nav" id="nextCard" aria-label="Next card">→</button></div><div class="flashcard-actions"><button class="review-button" id="markReview">↺ Review later</button><button class="master-button" id="markMastered">✓ I know this</button></div><div class="deck-empty-note" id="deckStatus"></div></section>
-      <footer class="app-footer"><span>LYRIX <span class="brand-dot">.</span> English through music</span><span>Made for curious minds ♡</span></footer>
+      <footer class="app-footer"><span>ILOVELYRICS <span class="brand-dot">.</span> English through music</span><span>Made for curious minds ♡</span></footer>
     </main>
   </div>
   <div class="expression-modal-backdrop hidden" id="expressionModal"><div class="expression-modal"><button class="modal-close" id="closeModal">×</button><div class="modal-label">EXPRESSION BREAKDOWN</div><h2 id="modalExpression"></h2><div class="modal-pronunciation" id="modalPronunciation"></div><div class="meaning-grid"><div><span>Literal meaning</span><p id="modalLiteral"></p></div><div><span>Real meaning</span><p id="modalMeaning"></p></div></div><div class="modal-register"><span>REGISTER</span><strong id="modalRegister"></strong></div><div class="modal-example"><span>IN CONTEXT</span><p id="modalExample"></p></div><button class="primary-button full" id="saveExpression">＋ Add to flashcards</button></div></div>
